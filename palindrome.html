@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            text-align: center;
+            padding: 10px;
+
+        }
+        div{
+            text-align: center;
+        }
+        h3{
+            display: inline;
+            background-color: rgb(19, 236, 128);
+            text-align: center;
+            color: rgb(10, 8, 2);
+            padding: 4px;
+            font-size: 25px;
+            
+        }
+        *{
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .btn{
+            background-color: black;
+            color: goldenrod;
+            font-size: large;
+        }
+        .btn:hover{
+            background-color: goldenrod;
+            color: BLACK;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(43, 16, 16);">
+    <div>
+    <h3>
+        Palindrome Checker
+    </h3>
+    </div>
+    <form name="num" class="form">
+        <textarea rows="2" name="num2" cols="15" placeholder="Enter your text here..." style="color:white; background-color: grey; font-size: 20px;" autofocus></textarea>
+        <br> 
+        <input class="btn" type="button" value="Reverse" onclick="rev()">
+        <input type="text" name="num3" size="20">
+        <br>
+        <input class="btn" type="button" value="Palindrome" onclick="pal()">
+        <input type="text" name="num4" size="20">
+    </form>
+    <script type="text/javascript">
+    let number;
+    let rev_num;
+    function rev(){
+        number=document.num.num2.value
+        rev_num=number.split(" ")
+        rev_num=number.split("")
+        rev_num=rev_num.reverse()
+        rev_num=rev_num.join("")
+        document.num.num3.value=rev_num
+
+    }
+    function pal(){
+        rev();
+        if (number===rev_num){
+            document.num.num4.value="It is a Palindrome"
+        }
+        else{
+            document.num.num4.value="It is not a Palindrome"
+        }
+
+    }     
+
+    </script>
+    
+</body>
+</html>
+
